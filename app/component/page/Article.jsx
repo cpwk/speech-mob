@@ -59,11 +59,11 @@ class Article extends React.Component {
                     pre !== undefined ? <div className="last arrow" onClick={() => {
                         this.edit(pre.id);
                     }}>
-                        <img src="../../assets/image/article/left-arrow-1.png" alt="左箭头"
+                        <img src={require('../../assets/image/article/left-arrow-1.png')} alt="左箭头"
                              className="arrow-img left-arrow-img"/>
                         上一篇
                     </div> : <div className="no arrow">
-                        <img src="../../assets/image/article/left-arrow-2.png" alt="左箭头"
+                        <img src={require('../../assets/image/article/left-arrow-2.png')} alt="左箭头"
                              className="arrow-img left-arrow-img"/>
                         没有了
                     </div>
@@ -78,11 +78,11 @@ class Article extends React.Component {
                     }}>
 
                         下一篇
-                        <img src="../../assets/image/article/right-arrow-1.png" alt="右箭头"
+                        <img src={require('../../assets/image/article/right-arrow-1.png')} alt="右箭头"
                              className="arrow-img right-arrow-img"/>
                     </div> : <div className="no arrow">
                         没有了
-                        <img src="../../assets/image/article/right-arrow-2.png" alt="右箭头"
+                        <img src={require('../../assets/image/article/right-arrow-2.png')} alt="右箭头"
                              className="arrow-img right-arrow-img"/>
                     </div>
                 }

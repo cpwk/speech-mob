@@ -6,33 +6,34 @@ import ApplyUtils from "../common/ApplyUtils";
 
 const course = [
     {
-        img: '../../assets/image/course/course-1.png',
+        img: require('../../assets/image/course/course-1.png'),
         text: {h1: '少年演说家全能养成课', first: '前进是未来的方向', second: '演说是飞翔的翅膀'},
-        ul: [{icon: '../../assets/image/icon/demo.png', font: '自信力'},
-            {icon: '../../assets/image/icon/demo.png', font: '分析力'},
-            {icon: '../../assets/image/icon/demo.png', font: '组织力'},
-            {icon: '../../assets/image/icon/demo.png', font: '逻辑力'},
-            {icon: '../../assets/image/icon/demo.png', font: '创造力'},
-            {icon: '../../assets/image/icon/demo.png', font: '感染力'},
-            {icon: '../../assets/image/icon/demo.png', font: '表现力'},
-            {icon: '../../assets/image/icon/demo.png', font: '表现力'}]
+        ul: [
+            {icon: require('../../assets/image/icon/demo.png'), font: '自信力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '分析力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '组织力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '逻辑力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '创造力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '感染力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '表现力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '表现力'}]
     },
     {
-        img: '../../assets/image/course/course-2.png',
+        img: require('../../assets/image/course/course-2.png'),
         text: {h1: '明星力集训营', first: '成为聚光灯下的孩子', second: '树立不甘平庸的信仰'},
-        ul: [{icon: '../../assets/image/icon/demo.png', font: '榜样之力'},
-            {icon: '../../assets/image/icon/demo.png', font: '向往之力'},
-            {icon: '../../assets/image/icon/demo.png', font: '荣耀之力'},
-            {icon: '../../assets/image/icon/demo.png', font: '梦想之力'},
+        ul: [{icon: require('../../assets/image/icon/demo.png'), font: '榜样之力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '向往之力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '荣耀之力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '梦想之力'},
         ]
     },
     {
-        img: '../../assets/image/course/course-3.png',
+        img: require('../../assets/image/course/course-3.png'),
         text: {h1: '少年演说家蓝图计划', first: '用志向绘制蓝图', second: '用演说成就明日之光'},
-        ul: [{icon: '../../assets/image/icon/demo.png', font: '自信力'},
-            {icon: '../../assets/image/icon/demo.png', font: '学习力'},
-            {icon: '../../assets/image/icon/demo.png', font: '演说学习法'},
-            {icon: '../../assets/image/icon/demo.png', font: '演说读心术'},
+        ul: [{icon: require('../../assets/image/icon/demo.png'), font: '自信力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '学习力'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '演说学习法'},
+            {icon: require('../../assets/image/icon/demo.png'), font: '演说读心术'},
         ]
     }
 ];
@@ -41,21 +42,21 @@ const tabs = [
     {title: <Badge text=''>企业家课程</Badge>},
 ];
 const Yimgs = [
-    {img: '../../assets/image/course/lessons01.png'},
-    {img: '../../assets/image/course/lessons02.png'},
-    {img: '../../assets/image/course/lessons03.png'},
-    {img: '../../assets/image/course/lessons04.png'},
-    {img: '../../assets/image/course/lessons05.png'},
-    {img: '../../assets/image/course/lessons06.png'},
+    {img: require('../../assets/image/course/lessons01.png')},
+    {img: require('../../assets/image/course/lessons02.png')},
+    {img: require('../../assets/image/course/lessons03.png')},
+    {img: require('../../assets/image/course/lessons04.png')},
+    {img: require('../../assets/image/course/lessons05.png')},
+    {img: require('../../assets/image/course/lessons06.png')},
 
 ];
 const Qimgs = [
-    {img: '../../assets/image/course/lessons07.png'},
-    {img: '../../assets/image/course/lessons08.png'},
-    {img: '../../assets/image/course/lessons09.png'},
-    {img: '../../assets/image/course/lessons10.png'},
-    {img: '../../assets/image/course/lessons11.png'},
-    {img: '../../assets/image/course/lessons12.png'},
+    {img: require('../../assets/image/course/lessons07.png')},
+    {img: require('../../assets/image/course/lessons08.png')},
+    {img: require('../../assets/image/course/lessons09.png')},
+    {img: require('../../assets/image/course/lessons010.png')},
+    {img: require('../../assets/image/course/lessons11.png')},
+    {img: require('../../assets/image/course/lessons12.png'),}
 ];
 
 const Program = '个人品牌方案班';

@@ -1,14 +1,14 @@
 import React from "react";
-import { Toast,Modal} from 'antd-mobile';
+import {Modal, Toast} from 'antd-mobile';
 import "../../assets/css/page/receivemodal.scss";
 import {App} from "../../common";
 import ApplyUtils from "./ApplyUtils";
 import U from "../../common/U";
 
 const gift = [
-    {img: '../../assets/image/modal/class01.png'},
-    {img: '../../assets/image/modal/class02.png'},
-    {img: '../../assets/image/modal/class03.png'},
+    {img: require('../../assets/image/modal/class01.png')},
+    {img: require('../../assets/image/modal/class02.png')},
+    {img: require('../../assets/image/modal/class03.png')},
 ];
 
 export default class ReceiveModal extends React.Component {
@@ -28,13 +28,13 @@ export default class ReceiveModal extends React.Component {
         let {name, mobile} = form;
         if (name === undefined) {
             Toast.fail('请填写姓名');
-        } else if (U.str.isChinaMobile(mobile)!==true) {
+        } else if (U.str.isChinaMobile(mobile) !== true) {
             Toast.fail('请输入正确的电话');
         } else {
             App.api('/ws/home/saveForm', {
                 form: JSON.stringify({
                     type: 2,
-                    name,mobile
+                    name, mobile
                 })
             });
             this.setState({

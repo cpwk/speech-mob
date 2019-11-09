@@ -25,7 +25,7 @@ export default class Successmodal extends React.Component {
                 onClose={() => this.close()}
             >
                 <div className="success">
-                    <img src="../../assets/image/modal/success.png" alt="领取成功"/>
+                    <img src={require('../../assets/image/modal/success.png')} alt="领取成功"/>
                     <div className="success-foot">
                         <h1>领取成功</h1>
                         <div className="text">

@@ -7,10 +7,10 @@ import {App} from "../common";
 
 
 const collaboration = [
-    {text: '中国传媒大学', img: '../assets/image/home/cm-logo.png'},
-    {text: '北京教育出版社', img: '../assets/image/home/bj-logo.png'},
-    {text: '优酷视频', img: '../assets/image/home/yk-logo.png'},
-    {text: '凤凰视频', img: '../assets/image/home/fh-logo.png'},
+    {text: '中国传媒大学', img: require('../assets/image/home/cm-logo.png')},
+    {text: '北京教育出版社', img: require('../assets/image/home/bj-logo.png')},
+    {text: '优酷视频', img: require('../assets/image/home/yk-logo.png')},
+    {text: '凤凰视频', img: require('../assets/image/home/fh-logo.png')},
 ];
 const data = [
     {label: '个人品牌方案班', value: "个人品牌方案班"},
@@ -171,10 +171,12 @@ class Header extends React.Component {
                     </div>
                     <div className="link course border" onClick={() => {
                         App.go(`/course/${0}`);
-                    }}>青少年课程</div>
+                    }}>青少年课程
+                    </div>
                     <div className="link course" onClick={() => {
                         App.go(`/course/${1}`);
-                    }}>企业家课程</div>
+                    }}>企业家课程
+                    </div>
                     <div className="link" onClick={() => {
                         App.go(`/brandShow`);
                     }}>品牌节目

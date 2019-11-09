@@ -6,14 +6,18 @@ import Utils from "../../common/Utils";
 import ApplyUtils from "../common/ApplyUtils";
 
 const synopsis = [
-    {icon: '../../assets/image/home/Vector-4.png', title: '理论更严谨', text: '联合中国传媒大学厂广告学院成立语言表达研究院，形成更科学严谨的教学体系。'},
-    {icon: '../../assets/image/home/Vector-3.png', title: '案例更丰富', text: '7年间超过4000件演说培训案例，井成功搬上荧幕成为国内演说经典。'},
-    {icon: '../../assets/image/home/Vector-2.png', title: '师资更豪华', text: '集结国内外演说届明星、名师大咖，拥有演说导师的顶配阵容。'},
-    {icon: '../../assets/image/home/Vector-1.png', title: '学员更成功', text: '大平台铸造学员进阶之路，成功帮助300位素人成为专业级的演说明星。'}
+    {
+        icon: require('../../assets/image/home/Vector-4.png'),
+        title: '理论更严谨',
+        text: '联合中国传媒大学厂广告学院成立语言表达研究院，形成更科学严谨的教学体系。'
+    },
+    {icon: require('../../assets/image/home/Vector-3.png'), title: '案例更丰富', text: '7年间超过4000件演说培训案例，井成功搬上荧幕成为国内演说经典。'},
+    {icon: require('../../assets/image/home/Vector-2.png'), title: '师资更豪华', text: '集结国内外演说届明星、名师大咖，拥有演说导师的顶配阵容。'},
+    {icon: require('../../assets/image/home/Vector-1.png'), title: '学员更成功', text: '大平台铸造学员进阶之路，成功帮助300位素人成为专业级的演说明星。'}
 ];
 const card = [
     {
-        img: '../../assets/image/home/program.png',
+        img: require('../../assets/image/home/program.png'),
         h1: '个人品牌方案班',
         h2: '从小众走向大众',
         one: '全新思维方式',
@@ -23,7 +27,7 @@ const card = [
         text: '所有竞争都是资源的抢夺，如何在这个时代让自己持续升值，让人脉、资本主动找上自己，拥有一呼百应的能力。',
     },
     {
-        img: '../../assets/image/home/shape.png',
+        img: require('../../assets/image/home/shape.png'),
         h1: '个人品牌塑造营',
         h2: '明星影响力 为自己代言',
         one: '用演说重塑明星级影响力',
@@ -33,7 +37,7 @@ const card = [
         text: '同样的个体，为什么有人自带明星光环?同样的产品，为什么有些自带流量?用独特个人品牌成就闪光自我。'
     },
     {
-        img: '../../assets/image/home/training.png',
+        img: require('../../assets/image/home/training.png'),
         h1: '明星力集训营',
         h2: '优秀自屈 明星的素养',
         one: '建立榜样力量激发梦想',
