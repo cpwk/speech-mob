@@ -1,0 +1,21 @@
+@import "./color";
+
+.prism-player {
+
+  .prism-setting-btn, .prism-cc-btn, .prism-volume {
+    display: none;
+  }
+
+  .prism-big-play-btn {
+    left: 50% !important;
+    margin-left: -32px !important;
+    top: 50% !important;
+    margin-top: -40px !important;
+    z-index: 2 !important;
+  }
+
+  .prism-progress-played {
+    background: $tcblue !important;
+  }
+
+}

@@ -1,0 +1,153 @@
+.am-modal-transparent {
+  width: 300px;
+
+  .am-modal-content {
+    overflow: hidden;
+
+    .am-modal-close {
+      top: 10px;
+    }
+
+    .am-modal-header {
+      padding: 20px 15px 15px;
+    }
+
+    .am-modal-body {
+      .content {
+        .gift {
+          display: flex;
+          width: 260px;
+          justify-content: space-between;
+
+          li {
+            width: 60px;
+            height: 75px;
+
+            img {
+              width: 60px;
+              height: 75px;
+            }
+          }
+        }
+
+        .form {
+          margin-top: 20px;
+          width: 260px;
+          height: 70px;
+
+          .input {
+            height: 35px;
+            border-bottom: 1px solid #d8d8d8;
+
+            .enter {
+              width: 280px;
+              height: 20px;
+              margin-top: 10px;
+              color: #333;
+              padding-left: 10px;
+            }
+
+            input::placeholder {
+              color: #c1c1c1;
+            }
+          }
+        }
+
+        .btn {
+          margin-top: 20px;
+          height: 40px;
+          background: #648CDC;
+          color: #fff;
+          text-align: center;
+          line-height: 40px;
+          border-radius: 300px;
+          cursor: pointer;
+          font-weight: 500;
+        }
+      }
+
+
+      .success {
+        width: 300px;
+        height: 245px;
+        margin: 0 auto;
+        overflow: hidden;
+
+        img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .success-foot {
+          margin-top: -30px;
+
+          h1 {
+            text-align: center;
+          }
+
+          .text {
+            margin: -15px auto;
+            width: 280px;
+            height: 64px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 32px;
+            color: #C1C1C1;
+            text-align: left;
+          }
+        }
+      }
+
+
+      .advisory {
+        height: 200px;
+
+        .form {
+          margin-top: 20px;
+          width: 260px;
+          height: 70px;
+
+          .line {
+            height: 35px;
+            border-bottom: 1px solid #d8d8d8;
+
+            p {
+              color: #333;
+              line-height: 30px;
+              font-size: 16px;
+            }
+
+            input {
+              width: 280px;
+              height: 20px;
+              margin-top: 10px;
+              color: #333;
+              padding-left: 10px;
+            }
+
+            input::placeholder {
+              color: #c1c1c1;
+            }
+          }
+
+          .line:first-child {
+            margin-bottom: 10px;
+            border: none;
+          }
+
+          .btn {
+            line-height: 30px;
+            color: #fff;
+            background: #648CDC;
+            border-radius: 300px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+
+  }
+}
+

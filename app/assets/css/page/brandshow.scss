@@ -1,0 +1,173 @@
+@import "../mixin";
+
+.brand-page {
+  height: 1750px;
+
+  .header {
+    margin: 22px 0 26px 0;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    color: #648cdc;
+  }
+
+  .border-list {
+    margin-top: 0;
+    overflow: hidden;
+
+
+    .waterfall {
+      height: 345px;
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+
+      .left {
+        flex: 1.6;
+        margin-right: 8px;
+
+        .top {
+          height: 134px;
+          background: beige;
+        }
+
+        .bottom {
+          height: 200px;
+          background: violet;
+          margin-top: 8px;
+        }
+      }
+
+      .right {
+        flex: 1;
+
+        .top {
+          height: 200px;
+          background: #000;
+          margin-bottom: 8px;
+        }
+
+        .bottom {
+          height: 134px;
+          background: hotpink;
+        }
+
+
+      }
+    }
+  }
+
+  .video-list {
+    .icon-arrow-down {
+      height: 21px;
+      margin-top: -20px;
+      background: url("../../image/brandShow/arrow-down.png") center no-repeat;
+      background-size: 21px 21px;
+    }
+
+    .list-video {
+      overflow: hidden;
+      margin-top: 10px;
+
+      .video {
+        height: 398px;
+        margin-bottom: 8px;
+        overflow: hidden;
+
+        .caption {
+          margin: 28px 0;
+          color: #333;
+          font-size: 16px;
+          font-weight: 500;
+          text-align: center;
+          line-height: 14px;
+          @include multi-line(3);
+        }
+
+        .videoSummary {
+          color: #666;
+          font-size: 12px;
+          line-height: 16px;
+          position: relative;
+
+          .summary {
+            width: 253px;
+            margin: 0 auto;
+            padding: 0 8px;
+
+
+            &:before, &:after {
+              content: "";
+              height: 16px;
+              width: 20px;
+              display: inline-block;
+              position: absolute;
+            }
+
+            &:after {
+              background: url("../../image/brandShow/marks-right.png") center no-repeat;
+              background-size: contain;
+              right: 0;
+            }
+
+            &:before {
+              margin-top: -5px;
+              left: 0;
+              background: url("../../image/brandShow/marks-left.png") center no-repeat;
+              background-size: contain;
+
+            }
+          }
+
+        }
+
+        .img {
+          border-radius: 8px;
+          height: 175px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          margin: 15px 0;
+          position: relative;
+        }
+
+        .videoIntro {
+          font-size: 12px;
+          color: #999;
+          line-height: 18px;
+          @include multi-line(3)
+        }
+      }
+    }
+  }
+}
+
+.stars-list {
+  height: 48vh;
+
+  .stars {
+    height: 33vh;
+    display: grid;
+    grid-gap: 15px 15px;
+    grid-template-columns: repeat(2, 43vw);
+    grid-template-rows: repeat(2, 15vh);
+    overflow: hidden;
+    margin-top: 32px;
+
+    .item {
+      overflow: hidden;
+
+      .img {
+        width: 43vw;
+        height: 15vh;
+        background-size: cover;
+        position: relative;
+        border-radius: 8px;
+
+        .icon-play {
+          top: 30px;
+        }
+      }
+    }
+  }
+}

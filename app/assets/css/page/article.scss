@@ -1,0 +1,107 @@
+@import "../mixin";
+
+.article-page {
+  overflow: hidden;
+
+  .top {
+    .title {
+      font-size: 20px;
+      line-height: 20px;
+      color: #333;
+      margin-top: 15px;
+    }
+
+    .date {
+      margin-top: 28px;
+
+      .name {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        color: #648cdc;
+      }
+
+      .time {
+        font-size: 12px;
+        line-height: 12px;
+        color: #999;
+        float: right;
+      }
+    }
+
+    .abstract {
+      background: #f1f2f6;
+      height: 55px;
+      margin: 24px 0;
+      overflow: hidden;
+
+
+      .center {
+        font-size: 14px;
+        line-height: 14px;
+        color: #4a4a4a;
+        margin: 10px 5px;
+        @include multi-line(2);
+
+        .text {
+          padding: 0 8px;
+        }
+      }
+    }
+
+    .content {
+      color: #4a4a4a;
+      font-size: 16px;
+      line-height: 25px;
+
+
+      img {
+        width: 92vw !important;
+        height: 200px;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 20px;
+    height: 50px;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+
+
+    .arrow {
+      flex: 1;
+      font-size: 14px;
+      line-height: 50px;
+      text-align: center;
+      color: #7f91a1;
+
+      &:after {
+        content: "";
+        border-left: 1px solid #d8d8d8;
+        position: relative;
+        top: 0;
+        right: -30px;
+        transform: scaleY(0.5);
+      }
+    }
+
+    .arrow:last-child:after {
+      display: none;
+    }
+
+
+    .arrow-img {
+      width: 12px;
+      height: 10px;
+
+    }
+    .left-arrow-img{
+      margin-right: 10px;
+    }
+    .right-arrow-img{
+      margin-left: 10px;
+    }
+  }
+}
