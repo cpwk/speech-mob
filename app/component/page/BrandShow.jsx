@@ -109,7 +109,7 @@ class BrandShow extends React.Component {
                             let {img, title, url} = item;
                             return <div className="item" key={index}>
                                     <div className="img" style={{
-                                        backgroundImage: `url('../../assets/image/common/mask.png'),url(${img})`
+                                        backgroundImage: `url(${img})`
                                     }}>
                                         <div className="icon-play" onClick={() => {
                                             Utils.view({src: url, title})

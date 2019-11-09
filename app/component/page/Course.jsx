@@ -138,7 +138,7 @@ export default class Course extends React.Component {
                                 正确的表达逻辑思维、良好的语言表达素养。
                             </div>
                             <div className="second-img">
-                                <img src="../../assets/image/course/Frame%201.png" alt="图片"/>
+                                <img src={require("../../assets/image/course/frame.png")} alt="图片"/>
                             </div>
                         </div>
                         <div className="page-third piece">
@@ -166,7 +166,7 @@ export default class Course extends React.Component {
                         <div className="enter-first">
                             <div className="first-content">
                                 <div className="first-content-img">
-                                    <img src="../../assets/image/course/course-4.png"/>
+                                    <img src={require("../../assets/image/course/course-4.png")}/>
                                 </div>
                             </div>
                             <div className="content">
@@ -213,7 +213,7 @@ export default class Course extends React.Component {
                             </div>
                             <div className="second-content">
                                 <div className="first-content-img">
-                                    <img src="../../assets/image/course/course-5.png"/>
+                                    <img src={require("../../assets/image/course/course-5.png")}/>
                                 </div>
                             </div>
                             <div className="content">
@@ -266,24 +266,24 @@ export default class Course extends React.Component {
                                 ，并成功让华人演说在全球范围内释放语言的智慧与力量。历时6年，这个伫立在华人演说领域金字塔顶尖的团队，在长期的实践中形成并验证了一套成熟的训练体系。
                             </div>
                             <div className="enter-img">
-                                <img src="../../assets/image/course/course-6.png"/>
+                                <img src={require("../../assets/image/course/course-6.png")}/>
                             </div>
                             <div className="enter-font">
                                 2019年6月演说家学院与中国传媒大学广告学院联合成立研究院，专注于公众表达的学术研究，为与时俱进实现更科学化、系统化、效果化的演说教研供给提供学术基础。
                             </div>
                             <div className="enter-img">
-                                <img src="../../assets/image/course/course-7.png"/>
+                                <img src={require("../../assets/image/course/course-7.png")}/>
                             </div>
 
                         </div>
-                        <div className="enter-third">
-                            <div className="enter-top">
+                        <div className=" enter-third">
+                            <div className=" enter-top">
                                 名师授课 精彩课堂
                             </div>
-                            <div className="enter-content">
+                            <div className=" enter-content">
                                 {Qimgs.map((item, index) => {
                                     let {img} = item;
-                                    return <div className="div"
+                                    return <div className=" div"
                                                 style={{
                                                     backgroundImage: `url(${img})`,
                                                     backgroundPosition: '50% 50%',

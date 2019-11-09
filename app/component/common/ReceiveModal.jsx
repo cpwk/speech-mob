@@ -36,11 +36,12 @@ export default class ReceiveModal extends React.Component {
                     type: 2,
                     name, mobile
                 })
+            }).then(()=>{
+                this.setState({
+                    visible: false,
+                });
+                ApplyUtils.success();
             });
-            this.setState({
-                visible: false,
-            });
-            ApplyUtils.success();
         }
     };
 
