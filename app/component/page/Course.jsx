@@ -54,7 +54,7 @@ const Qimgs = [
     {img: require('../../assets/image/course/lessons07.png')},
     {img: require('../../assets/image/course/lessons08.png')},
     {img: require('../../assets/image/course/lessons09.png')},
-    {img: require('../../assets/image/course/lessons010.png')},
+    {img: require('../../assets/image/course/lessons10.png')},
     {img: require('../../assets/image/course/lessons11.png')},
     {img: require('../../assets/image/course/lessons12.png'),}
 ];
