@@ -17,6 +17,7 @@ export default class Successmodal extends React.Component {
     render() {
         return <div>
             <Modal
+                className="course"
                 title=""
                 visible={this.state.visible}
                 transparent

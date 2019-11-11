@@ -50,6 +50,7 @@ export default class ReceiveModal extends React.Component {
         let {name, mobile} = form;
         return <div>
             <Modal
+                className="course"
                 title="限时免费领取超级演说家礼包"
                 visible={this.state.visible}
                 transparent

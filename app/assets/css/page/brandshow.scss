@@ -129,6 +129,11 @@
           background-position: center;
           margin: 15px 0;
           position: relative;
+
+          .mask {
+            height: 175px;
+            background-color: rgba(0, 0, 0, 0.5);
+          }
         }
 
         .videoIntro {
@@ -163,6 +168,11 @@
         background-size: cover;
         position: relative;
         border-radius: 8px;
+
+        .mask {
+          height: 175px;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
 
         .icon-play {
           top: 30px;

@@ -51,9 +51,10 @@ export default class ApplyModal extends React.Component {
 
     render() {
         let {form = {}, cour} = this.state;
-        let {name, mobile, course} = form;
+        let {name, mobile} = form;
         return <div>
             <Modal
+                className="course"
                 title="课程咨询"
                 visible={this.state.visible}
                 transparent

@@ -29,6 +29,7 @@ export default class PlayerDialog extends React.Component {
         let index = parseInt(Math.random() * 100);
 
         return <Modal title={name}
+                      className="player"
                       getContainer={() => Utils.common.createModalContainer(id_div)}
                       transparent
                       closable={true}

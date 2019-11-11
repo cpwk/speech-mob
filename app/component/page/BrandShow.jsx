@@ -87,10 +87,11 @@ class BrandShow extends React.Component {
                                         </div>
                                     </div>
                                     <div className="img" style={{
-                                        backgroundImage: `url('../../assets/image/common/mask.png'),url(${img})`
+                                        backgroundImage: `url(${img})`
                                     }}>
+                                        <div className="mask"/>
                                         <div className="icon-play" onClick={() => {
-                                            Utils.view({src: url, title})
+                                            Utils.view({name: title, src: url});
                                         }}/>
                                     </div>
                                     <div className="videoIntro">{videoIntro}</div>
@@ -112,8 +113,9 @@ class BrandShow extends React.Component {
                                         backgroundImage: `url(${img})`
                                     }}>
                                         <div className="icon-play" onClick={() => {
-                                            Utils.view({src: url, title})
+                                            Utils.view({name: title, src: url});
                                         }}/>
+                                        <div className="mask"/>
                                     </div>
 
                             </div>
