@@ -28,7 +28,7 @@ export default class PlayerDialog extends React.Component {
         let {name, src} = wrap;
         let index = parseInt(Math.random() * 100);
 
-        return <Modal title={name}
+        return <Modal
                       className="player"
                       getContainer={() => Utils.common.createModalContainer(id_div)}
                       transparent
@@ -36,7 +36,7 @@ export default class PlayerDialog extends React.Component {
                       maskClosable={false}
                       onClose={() => this.close()}
                       visible={visible}>
-            <AliPlayer src={src} index={index} width='300px' height='300px'/>
+            <AliPlayer src={src} index={index} width='300px' height='300px' style={{marginTop:'25vh'}}/>
         </Modal>
     }
 }
