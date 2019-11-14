@@ -28,12 +28,14 @@
 
         .top {
           height: 134px;
-          background: beige;
+          background: url("../../image/brandShow/ip1.png") no-repeat center;
+          background-size: cover;
         }
 
         .bottom {
           height: 200px;
-          background: violet;
+          background: url("../../image/brandShow/ip2.png") no-repeat center;
+          background-size: cover;
           margin-top: 8px;
         }
       }
@@ -43,13 +45,15 @@
 
         .top {
           height: 200px;
-          background: #000;
+          background: url("../../image/brandShow/ip3.png") no-repeat center;
+          background-size: cover;
           margin-bottom: 8px;
         }
 
         .bottom {
           height: 134px;
-          background: hotpink;
+          background: url("../../image/brandShow/ip4.png") no-repeat center;
+          background-size: cover;
         }
 
 

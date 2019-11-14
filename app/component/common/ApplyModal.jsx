@@ -2,6 +2,7 @@ import React from "react";
 import {Modal, Toast} from 'antd-mobile';
 import U from "../../common/U";
 import {App} from "../../common";
+import ApplyUtils from "./ApplyUtils";
 
 
 export default class ApplyModal extends React.Component {
@@ -34,11 +35,12 @@ export default class ApplyModal extends React.Component {
                     name, mobile, course,
                 })
             }).then(() => {
-                Toast.success('成功');
+                this.setState({
+                    visible: false,
+                });
+                ApplyUtils.applySuccess();
             });
-            this.setState({
-                visible: false,
-            });
+
         }
     };
 
@@ -55,11 +57,11 @@ export default class ApplyModal extends React.Component {
         return <div>
             <Modal
                 className="course"
-                title="课程咨询"
+                title="咨询课程"
                 visible={this.state.visible}
                 transparent
                 closable={true}
-                maskClosable={false}
+                maskClosable={true}
                 onClose={() => this.close()}
             >
                 <div className="advisory">
@@ -95,7 +97,7 @@ export default class ApplyModal extends React.Component {
 
                         <div className="btn" onClick={() => {
                             this.handleOk();
-                        }}>确定
+                        }}>申请咨询
                         </div>
                     </div>
                 </div>

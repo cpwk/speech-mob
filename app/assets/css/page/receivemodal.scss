@@ -79,6 +79,12 @@
           height: 150px;
         }
 
+        .vector {
+          width: 100px;
+          height: 100px;
+          margin-bottom: 30px;
+        }
+
         .success-foot {
           margin-top: -30px;
 
@@ -109,7 +115,7 @@
           height: 70px;
 
           .line {
-            height: 35px;
+            height: 40px;
             border-bottom: 1px solid #d8d8d8;
 
             p {
@@ -143,7 +149,7 @@
             border-radius: 300px;
             cursor: pointer;
             font-weight: 500;
-            margin-top: 20px;
+            margin-top: 30px;
           }
         }
       }

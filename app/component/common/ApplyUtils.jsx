@@ -3,6 +3,7 @@ import Utils from "../../common/Utils";
 import ApplyModal from "./ApplyModal";
 import ReceiveModal from "./ReceiveModal";
 import Successmodal from "./Successmodal";
+import ApplySuccessModal from "./ApplySuccessModal";
 
 let ApplyUtils = (() => {
     let modal = (course) => {
@@ -14,8 +15,11 @@ let ApplyUtils = (() => {
     let success = () => {
         Utils.common.renderReactDOM(<Successmodal/>)
     };
+    let applySuccess = () => {
+        Utils.common.renderReactDOM(<ApplySuccessModal/>)
+    };
     return {
-        modal, receive,success
+        modal, receive, success, applySuccess
     }
 })();
 export default ApplyUtils;
