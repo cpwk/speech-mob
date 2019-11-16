@@ -283,7 +283,7 @@ export default class Course extends React.Component {
                             <div className=" enter-content">
                                 {Qimgs.map((item, index) => {
                                     let {img} = item;
-                                    return <div className=" div"
+                                    return <div className=" div" key={index}
                                                 style={{
                                                     backgroundImage: `url(${img})`,
                                                     backgroundPosition: '50% 50%',

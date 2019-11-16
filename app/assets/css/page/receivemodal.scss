@@ -191,3 +191,91 @@
 .prism-player {
   margin-top: 25vh;
 }
+
+
+.enter {
+  height: 330px;
+
+  .am-modal-content {
+
+    .am-modal-header {
+      padding: 0;
+      height: 48px;
+
+      .am-modal-title {
+        line-height: 48px;
+        border-bottom: 1px solid #f1f2f6;
+      }
+    }
+
+    .am-modal-body {
+      .tiao {
+        height: 44px;
+        line-height: 44px;
+        width: 92%;
+        margin: 0 4%;
+        border: 1px solid #C1C1C1;
+        border-radius: 8px;
+        text-align: left;
+        padding-left: 12px;
+
+        input {
+          font-size: 16px;
+        }
+
+        .am-list-item {
+          min-height: 42px;
+          padding: 0;
+          width: 99%;
+
+          .am-list-line {
+            position: relative;
+
+            .am-list-extra {
+              text-align: left;
+            }
+
+            .am-list-arrow {
+              position: absolute;
+              right: 20px;
+            }
+          }
+        }
+      }
+
+      .course_xz {
+        margin-top: 30px;
+      }
+
+      .name, .mobile {
+        margin-top: 20px;
+      }
+
+      .btn {
+        line-height: 49px;
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+        background-color: #FF7B18;
+        height: 49px;
+        margin-top: 31px;
+      }
+    }
+  }
+
+}
+
+
+.success_ful_modal {
+  width: 150px !important;
+  height: 147px !important;
+  overflow: hidden;
+  border-radius: 15px;
+
+  .success_ful {
+    width: 150px;
+    height: 147px;
+    background: url("../../image/modal/Successful .png") center no-repeat;
+    background-size: cover;
+  }
+}

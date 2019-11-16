@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import '../assets/css/comps.scss'
-import {Carousel, Icon, List, Picker, Toast, WingBlank} from 'antd-mobile';
-
+import {Carousel, Icon, List, Modal, Picker, Toast, WingBlank} from 'antd-mobile';
 import {App} from "../common";
+import "../assets/css/page/receivemodal.scss";
 
 
 const collaboration = [
@@ -96,7 +96,7 @@ class Banners extends React.Component {
         App.api('/ws/home/findBanners', {bannerQo: JSON.stringify({type: 2})}).then((result) => {
             this.setState({list: result})
         })
-    };
+    }
 
     render() {
 
@@ -144,20 +144,25 @@ class Header extends React.Component {
 
     render() {
         let {see} = this.state;
-        return <div className="top-header">
-            <div className="inner">
-                <div className="logo"/>
-                <span className="phone">
+        return <div>
+
+            {see && <div className='overlay' onClick={() => {
+                this.show()
+            }}/>}
+            <div className={`top-header  ${see && 'top-header-open'}`}>
+                <div className="inner">
+                    <div className="logo"/>
+                    <span className="phone">
                      <Icon type="phone" className="icon_phone" rotate={90}/>
                      <em> 010-6744716</em>
                 </span>
-                <div className="more" onClick={() => {
-                    this.show();
-                }}/>
-            </div>
-            {see === true && <div className="show" onClick={() => {
-                this.show()
-            }}>
+                    <div className="more" onClick={() => {
+                        this.show();
+                    }}/>
+                </div>
+
+
+                {see &&
                 <div className="see">
                     <div className="link" onClick={() => {
                         App.go(`/`);
@@ -181,8 +186,8 @@ class Header extends React.Component {
                         App.go(`/brandShow`);
                     }}>品牌节目
                     </div>
-                </div>
-            </div>}
+                </div>}
+            </div>
         </div>
     }
 }
@@ -194,8 +199,22 @@ class Footer extends React.Component {
             form: {},
             visible: false,
             asyncValue: [],
+            modal2: false,
+            success: false,
         };
     }
+
+    showModal = key => (e) => {
+        e.preventDefault(); // 修复 Android 上点击穿透
+        this.setState({
+            [key]: true,
+        });
+    };
+    onClose = key => () => {
+        this.setState({
+            [key]: false,
+        });
+    };
 
     submit = () => {
         let {form} = this.state;
@@ -208,15 +227,19 @@ class Footer extends React.Component {
             Toast.fail("请选择课程");
         } else {
             App.api('/ws/home/saveForm', {form: JSON.stringify({type: 1, name, mobile, course})}).then(() => {
-                Toast.success('报名成功');
-                this.setState({visible: false})
+                this.setState({modal2: false});
+                this.setState({success: true});
+                this.setState({form:{}});
             });
+
         }
     };
 
     render() {
         let {form = {}} = this.state;
         let {name, mobile, course} = form;
+
+        console.log(this.state.success);
 
         return <div className="footer">
             <WingBlank>
@@ -240,41 +263,69 @@ class Footer extends React.Component {
                             })}
                         </div>
                     </div>
-
-                    <div className="join">
-                        <ul>
-                            <li><input type="text" placeholder="请输入您的姓名" value={name} onChange={(e) => {
-                                this.setState({form: {...form, name: e.target.value}})
-                            }}/></li>
-                            <li>
-                                <Picker data={data}
-
-                                        extra="请选择课程"
-                                        cols={1}
-                                        visible={this.state.visible}
-                                        onChange={v => this.setState({form: {...form, course: v[0]}})}
-                                        value={[course]}
-                                        onOk={() => this.setState({visible: false})}
-                                        onDismiss={() => this.setState({visible: false})}
-                                >
-                                    <List.Item arrow="down" onClick={() => this.setState({visible: true})}/>
-                                </Picker>
-                            </li>
-                            <li><input type="tel" placeholder="请输入您的手机号" value={mobile} onChange={(e) => {
-                                this.setState({form: {...form, mobile: e.target.value}})
-                            }}/></li>
-                            <li>
-                                <div className="apply" onClick={() => {
-                                    this.submit();
-                                }}>立即报名
-                                </div>
-                            </li>
-
-                        </ul>
+                </div>
+                <div className="record_number">
+                    <div className="text">
+                        Copyright © 2019 天津能量集团 ALL Rights Reserved.
+                    </div>
+                    <div className="text">
+                        津ICP备17027517号-3
                     </div>
                 </div>
             </WingBlank>
+            <div className="btn" onClick={
+                this.showModal('modal2')
+            }>立即报名
+            </div>
 
+            <Modal
+                className='enter'
+                title={'报名课程'}
+                popup
+                visible={this.state.modal2}
+                onClose={this.onClose('modal2')}
+                animationType="slide-up"
+            >
+                <div className="course_xz tiao">
+                    <Picker data={data}
+                            extra="请选择课程"
+                            cols={1}
+                            visible={this.state.visible}
+                            onChange={v => this.setState({form: {...form, course: v[0]}})}
+                            value={[course]}
+                            onOk={() => this.setState({visible: false})}
+                            onDismiss={() => this.setState({visible: false})}
+                    >
+                        <List.Item arrow="down" onClick={() => this.setState({visible: true})}/>
+                    </Picker>
+                </div>
+
+                <div className="name tiao">
+                    <input type="text" value={name} placeholder='请输入您的姓名' onChange={(e) => {
+                        this.setState({form: {...form, name: e.target.value}})
+                    }}/>
+                </div>
+                <div className="mobile tiao">
+                    <input type="tel" placeholder='请输入您的手机号' value={mobile} onChange={(e) => {
+                        this.setState({form: {...form, mobile: e.target.value}})
+                    }}/>
+                </div>
+                <div className="btn" onClick={() => {
+                    this.submit();
+                }}>
+                    确认提交
+                </div>
+            </Modal>
+
+
+            <Modal
+                className='success_ful_modal'
+                visible={this.state.success}
+                onClose={() => this.setState({success: false})}
+                maskClosable={true}
+            >
+                <div className="success_ful"/>
+            </Modal>
         </div>
     }
 }

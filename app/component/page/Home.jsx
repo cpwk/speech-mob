@@ -270,10 +270,10 @@ export default class Home extends React.Component {
                     </ul>
                     <ul className="ordinary">
                         {teacherList.map((teacher, index) => {
-                            let {mobImg, name, intro, masterPiece} = teacher;
+                            let {pcImg, name, intro, masterPiece} = teacher;
                             return <li className="teacher" key={index}>
                                 <div className="avatar">
-                                    <img src={mobImg} alt="头像"/>
+                                    <img src={pcImg} alt="头像"/>
                                 </div>
                                 <div className="bottom">
                                     <div className="name">{name}</div>
