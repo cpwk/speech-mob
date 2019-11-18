@@ -109,14 +109,14 @@ class BrandShow extends React.Component {
                         {stars.map((item, index) => {
                             let {img, title, url} = item;
                             return <div className="item" key={index}>
-                                    <div className="img" style={{
-                                        backgroundImage: `url(${img})`
-                                    }}>
-                                        <div className="icon-play" onClick={() => {
-                                            Utils.view({name: title, src: url});
-                                        }}/>
-                                        <div className="mask"/>
-                                    </div>
+                                <div className="img" style={{
+                                    backgroundImage: `url(${img})`
+                                }}>
+                                    <div className="icon-play" onClick={() => {
+                                        Utils.view({name: title, src: url});
+                                    }}/>
+                                    <div className="mask"/>
+                                </div>
 
                             </div>
                         })}

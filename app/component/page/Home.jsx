@@ -4,6 +4,7 @@ import {Banners} from "../Comps";
 import "../../assets/css/page/home.scss";
 import Utils from "../../common/Utils";
 import ApplyUtils from "../common/ApplyUtils";
+import U from "../../common/U";
 
 const synopsis = [
     {
@@ -11,9 +12,9 @@ const synopsis = [
         title: '理论更严谨',
         text: '联合中国传媒大学厂广告学院成立语言表达研究院，形成更科学严谨的教学体系。'
     },
-    {icon: require('../../assets/image/home/Vector-3.png'), title: '案例更丰富', text: '7年间超过4000件演说培训案例，井成功搬上荧幕成为国内演说经典。'},
+    {icon: require('../../assets/image/home/Vector-1.png'), title: '案例更丰富', text: '7年间超过4000件演说培训案例，井成功搬上荧幕成为国内演说经典。'},
     {icon: require('../../assets/image/home/Vector-2.png'), title: '师资更豪华', text: '集结国内外演说届明星、名师大咖，拥有演说导师的顶配阵容。'},
-    {icon: require('../../assets/image/home/Vector-1.png'), title: '学员更成功', text: '大平台铸造学员进阶之路，成功帮助300位素人成为专业级的演说明星。'}
+    {icon: require('../../assets/image/home/Vector-3.png'), title: '学员更成功', text: '大平台铸造学员进阶之路，成功帮助300位素人成为专业级的演说明星。'}
 ];
 const card = [
     {
@@ -39,7 +40,7 @@ const card = [
     {
         img: require('../../assets/image/home/training.png'),
         h1: '明星力集训营',
-        h2: '优秀自屈 明星的素养',
+        h2: '优秀自驱 明星的素养',
         one: '建立榜样力量激发梦想',
         two: '树立不甘平庸的信仰',
         three: '新闻演播室录制、舞台体验',
@@ -83,7 +84,7 @@ export default class Home extends React.Component {
                 if (type === 1 && tutorList.length < 3) {
 
                     tutorList.push(item);
-                } else if (type === 2 && teacherList.length < 3) {
+                } else if (type === 2) {
                     teacherList.push(item);
                 }
             });
@@ -160,18 +161,6 @@ export default class Home extends React.Component {
                     <div className="content">
                         <div className="box college"/>
                         <div className="top">
-                            <div className="text color">
-                                <p>
-                                    超级演说家学院是中国领先的华语培训的创新产业机构，
-                                    效果式华语演说体系创立者，以演说为载体帮助学员收货认同感、获得感、成就感。
-                                </p>
-                                <p>
-                                    超级演说家学院是能量慧明基于《演说家》系列语言表达节目的7年研究精华延展至演说培训领域的成果。
-                                </p>
-                            </div>
-                            <div className="people">
-                                <span>超级演说家总导演&nbsp;&nbsp;崎本涵涵</span>
-                            </div>
                         </div>
                     </div>
                     <div className="strip">
@@ -254,12 +243,15 @@ export default class Home extends React.Component {
                                     <img src={mobImg} alt="头像"/>
                                 </div>
                                 <div className="right">
-                                    <div className="present">{intro}</div>
+                                    <div className="present" dangerouslySetInnerHTML={{__html: U.str.rn2br(intro)}}
+                                         style={{textAlign: 'left'}}/>
                                     <div className="bottom">
                                         <div className="name">{name}</div>
                                         <div className="masterpiece">
                                             <div className="delegate">代表作</div>
-                                            {masterPiece}
+                                            <div dangerouslySetInnerHTML={{__html: U.str.rn2br(masterPiece)}}
+                                                 style={{textAlign: 'left'}}
+                                             className="delegate-detail"/>
                                         </div>
                                     </div>
 
@@ -277,8 +269,10 @@ export default class Home extends React.Component {
                                 </div>
                                 <div className="bottom">
                                     <div className="name">{name}</div>
-                                    <div className="summary">{intro}</div>
-                                    <div className="detail">{masterPiece}</div>
+                                    <div className="summary" dangerouslySetInnerHTML={{__html: U.str.rn2br(intro)}}
+                                         style={{textAlign: 'center'}}/>
+                                    <div className="detail" dangerouslySetInnerHTML={{__html: U.str.rn2br(masterPiece)}}
+                                         style={{textAlign: 'center'}}/>
                                 </div>
                             </li>
                         })}
@@ -301,14 +295,16 @@ export default class Home extends React.Component {
 
                         </div>
                         <h2>城市校区</h2>
-                        <div className="city-campus">
-                            {town.map((item, index) => {
-                                let {name, company} = item;
-                                return <div className={index > 3 ? 'none' : 'city'} key={index}>
-                                    <div className="address font">{name}</div>
-                                    <div className="operation font">校区运营：{company}</div>
-                                </div>
-                            })}
+                        <div className="city-campus" id="sroll">
+                            <div className="force-overflow">
+                                {town.map((item, index) => {
+                                    let {name, company} = item;
+                                    return <div className='city' key={index}>
+                                        <div className="address font">{name}</div>
+                                        <div className="operation font">校区运营：{company}</div>
+                                    </div>
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -319,12 +315,12 @@ export default class Home extends React.Component {
                     </div>
                     <ul className="latest-news-list">
                         {latestNews.map((item, index) => {
-                            let {id, img, intro} = item;
+                            let {id, img, title} = item;
                             return <li key={index} onClick={() => {
                                 this.edit(id);
                             }}>
                                 <img src={img} alt="资讯配图"/>
-                                <p>{intro}</p>
+                                <p>{title}</p>
                             </li>
                         })}
                     </ul>
@@ -337,19 +333,17 @@ export default class Home extends React.Component {
                     </div>
                     <ul className="latest-news-list">
                         {pastNews.map((item, index) => {
-                            let {id, img, intro} = item;
+                            let {id, img, title} = item;
                             return <li key={index} onClick={() => {
                                 this.edit(id);
                             }}>
                                 <img src={img} alt="资讯配图"/>
-                                <p>{intro}</p>
+                                <p>{title}</p>
                             </li>
                         })}
                     </ul>
                 </div>
             </div>
-
-
         </div>
     }
 }

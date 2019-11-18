@@ -80,7 +80,7 @@
         }
 
         .vector {
-          width: 100px;
+          width: 162px;
           height: 100px;
           margin-bottom: 30px;
         }
@@ -166,9 +166,11 @@
   .am-modal-content {
     overflow: hidden;
     padding-top: 0;
+    opacity: 0.8;
 
     .am-modal-close {
       top: 30px;
+      //display: none;
     }
 
     .am-modal-header {

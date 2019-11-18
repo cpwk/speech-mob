@@ -176,14 +176,17 @@ class Header extends React.Component {
                     </div>
                     <div className="link course border" onClick={() => {
                         App.go(`/course/${0}`);
+                        this.show();
                     }}>青少年课程
                     </div>
                     <div className="link course" onClick={() => {
                         App.go(`/course/${1}`);
+                        this.show();
                     }}>企业家课程
                     </div>
                     <div className="link" onClick={() => {
                         App.go(`/brandShow`);
+                        this.show();
                     }}>品牌节目
                     </div>
                 </div>}
@@ -239,8 +242,6 @@ class Footer extends React.Component {
         let {form = {}} = this.state;
         let {name, mobile, course} = form;
 
-        console.log(this.state.success);
-
         return <div className="footer">
             <WingBlank>
                 <div className="inner">
@@ -266,10 +267,10 @@ class Footer extends React.Component {
                 </div>
                 <div className="record_number">
                     <div className="text">
-                        Copyright © 2019 天津能量集团 ALL Rights Reserved.
+                        Copyright © 2019 天津能量集团
                     </div>
                     <div className="text">
-                        津ICP备17027517号-3
+                        ALL Rights Reserved.津ICP备17027517号-3
                     </div>
                 </div>
             </WingBlank>

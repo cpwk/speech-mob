@@ -1,11 +1,50 @@
+@import "../mixin";
+
 .course-page {
+  overflow: hidden;
 
   .ren-tabs {
+    background-color: #fff;
+    border: none;
+
     .am-tabs-top {
+      height: 52px;
+      padding-top: 25px;
+      width: 92%;
+      margin: 0 4%;
+      border: none;
+
+
       .am-tabs-tab-bar-wrap {
+        height: 27px;
+        border: none;
+
         .am-tabs-default-bar-top {
+          height: 27px;
+          border: none;
+
           .am-tabs-default-bar-content {
+            height: 27px;
+            border: none;
+
+            .am-tabs-default-bar-tab {
+              height: 27px;
+              background: #eee;
+              border: none;
+            }
+
+            .am-tabs-default-bar-tab:first-child {
+              border-radius: 5px 0 0 5px;
+              border: none;
+            }
+
+            .am-tabs-default-bar-tab:nth-child(2) {
+              border-radius: 0 5px 5px 0;
+              border: none;
+            }
+
             .am-tabs-default-bar-tab-active {
+              height: 27px;
               background: #648cdc;
               border-bottom: none;
             }
@@ -26,15 +65,19 @@
     .page-first {
       background-color: white;
       overflow: hidden;
-      height: 520px;
+      height: auto;
+      padding: 0;
 
       .course-information {
-        padding-top: 5px;
-        height: 150px;
+        padding: 0 15px;
+        height: 23vh;
         overflow: hidden;
         clear: both;
-        margin-top: 20px;
+        margin-top: 15px;
         position: relative;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+
 
         .course-img {
           margin-bottom: 16px;
@@ -48,6 +91,7 @@
         }
 
         .course-information-content {
+          padding-top: 3px;
           width: 56vw;
           padding-left: 15px;
           float: left;
@@ -112,6 +156,10 @@
         .btn {
           margin-left: 12px;
         }
+
+        &:last-child {
+          border-bottom: none;
+        }
       }
     }
 
@@ -163,7 +211,7 @@
       background-color: white;
       min-height: 100px;
       margin-top: 8px;
-      height: 64vh;
+      height: auto;
 
 
       .third-content {
@@ -187,13 +235,18 @@
 
   .enter-course-page {
     .enter-first {
-      padding: 24px 4.26vw 0 4.26vw;
+      //padding: 24px 4.26vw 0 4.26vw;
       background-color: white;
       min-height: 100px;
+
+      .first-content {
+        padding: 24px 4.26vw 0 4.26vw;
+      }
 
       .first-content-img {
         width: 100%;
         height: 58vw;
+
         img {
           width: 100%;
           height: 58vw;
@@ -203,6 +256,8 @@
 
       .content {
         overflow: hidden;
+        margin-bottom: 8px;
+        padding: 0 4.26vw 0 4.26vw;
 
         .content-top {
           overflow: hidden;
@@ -234,6 +289,7 @@
 
           .btn {
             right: 0;
+            top: 12px;
             left: 85%;
           }
 
@@ -243,6 +299,8 @@
           display: flex;
           flex-wrap: wrap;
           padding: 8px 11px 0 11px;
+          background: #F9F8FD;
+          border-radius: 4px;
 
           .list-detail {
             flex: 0 0 50%;
@@ -254,6 +312,8 @@
               background: url("../../image/course/Correct.png") center no-repeat;
               background-size: contain;
               display: inline-block;
+              vertical-align: middle;
+              margin-right: 5px;
             }
 
             .list-label {
@@ -269,22 +329,32 @@
 
         .content-font {
           clear: both;
-          margin: 20px 0;
-          height: 36px;
+          height: 70px;
           font-size: 12px;
           font-weight: 300;
           color: rgba(153, 153, 153, 1);
           line-height: 18px;
+          padding-top: 15px;
+          @include multi-line(3);
         }
+
+      }
+
+      .content-line {
+        border-bottom: 1px solid #eee;
+      }
+
+      .second-content {
+        padding: 0 4.26vw 0 4.26vw;
+        margin-top: 15px;
       }
     }
 
     .enter-second {
       overflow: hidden;
-      padding: 24px 4.26vw 0 4.26vw;
+      padding: 20px 4.26vw 0 4.26vw;
       background-color: white;
       min-height: 100px;
-      margin-top: 8px;
 
       .enter-font {
         font-size: 13px;
@@ -347,4 +417,13 @@
     }
   }
 
+  .gray {
+    width: 100%;
+    height: 8px;
+    background-color: #f2f2f2;
+  }
 }
+
+
+
+

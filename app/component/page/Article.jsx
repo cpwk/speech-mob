@@ -17,6 +17,7 @@ class Article extends React.Component {
 
     componentDidMount() {
         this.loadData();
+
     }
 
     loadData = () => {
@@ -40,7 +41,7 @@ class Article extends React.Component {
                 <div className='top'>
                     <div className='title'>{title}</div>
                     <div className='date'>
-                        <span className="name">作者姓名&nbsp;&nbsp;&nbsp;&nbsp;{name}&nbsp;&nbsp;</span>
+                        <span className="name">{name}&nbsp;&nbsp;</span>
                         <span className="time">{U.date.format(new Date(createdAt), 'yyyy-MM-dd')}</span>
                     </div>
                     <div className="abstract">

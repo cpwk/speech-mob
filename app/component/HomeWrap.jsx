@@ -14,9 +14,7 @@ export default class HomeWrap extends React.Component {
 
     componentDidMount() {
         window.addEventListener('hashchange', () => {
-            setTimeout(() => {
-                Utils.common.scrollTop();
-            }, 500);
+            window.scrollTo(0);
             this.judgePage();
         });
         this.judgePage();
