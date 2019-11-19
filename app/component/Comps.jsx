@@ -232,7 +232,7 @@ class Footer extends React.Component {
             App.api('/ws/home/saveForm', {form: JSON.stringify({type: 1, name, mobile, course})}).then(() => {
                 this.setState({modal2: false});
                 this.setState({success: true});
-                this.setState({form:{}});
+                this.setState({form: {}});
             });
 
         }

@@ -6,17 +6,17 @@ import ApplyUtils from "../common/ApplyUtils";
 
 const course = [
     {
-        img: require('../../assets/image/course/course-1.png'),
+        img: require('../../assets/image/course/course-1.jpg'),
         text: {h1: '少年演说家全能养成课', first: '前进是未来的方向', second: '演说是飞翔的翅膀'},
         icon: require('../../assets/image/course/icon_01.png'),
     },
     {
-        img: require('../../assets/image/course/course-2.png'),
+        img: require('../../assets/image/course/course-2.jpg'),
         text: {h1: '明星力集训营', first: '成为聚光灯下的孩子', second: '树立不甘平庸的信仰'},
         icon: require('../../assets/image/course/icon_02.png'),
     },
     {
-        img: require('../../assets/image/course/course-3.png'),
+        img: require('../../assets/image/course/course-3.jpg'),
         text: {h1: '少年演说家蓝图计划', first: '用志向绘制蓝图', second: '用演说成就明日之光'},
         icon: require('../../assets/image/course/icon_03.png'),
     }
@@ -152,7 +152,7 @@ export default class Course extends React.Component {
                     <div className="enter-first">
                         <div className="first-content">
                             <div className="first-content-img">
-                                <img src={require("../../assets/image/course/course-4.png")} alt='图片'/>
+                                <img src={require("../../assets/image/course/course-4.jpg")} alt='图片'/>
                             </div>
                         </div>
                         <div className="content content-line">
@@ -199,7 +199,7 @@ export default class Course extends React.Component {
 
                         <div className="second-content">
                             <div className="first-content-img">
-                                <img src={require("../../assets/image/course/course-5.png")} alt='图片'/>
+                                <img src={require("../../assets/image/course/course-5.jpg")} alt='图片'/>
                             </div>
                         </div>
                         <div className="content">
@@ -253,13 +253,13 @@ export default class Course extends React.Component {
                             ，并成功让华人演说在全球范围内释放语言的智慧与力量。历时6年，这个伫立在华人演说领域金字塔顶尖的团队，在长期的实践中形成并验证了一套成熟的训练体系。
                         </div>
                         <div className="enter-img">
-                            <img src={require("../../assets/image/course/course-6.png")} alt='图片'/>
+                            <img src={require("../../assets/image/course/course-6.jpg")} alt='图片'/>
                         </div>
                         <div className="enter-font">
                             2019年6月演说家学院与中国传媒大学广告学院联合成立研究院，专注于公众表达的学术研究，为与时俱进实现更科学化、系统化、效果化的演说教研供给提供学术基础。
                         </div>
                         <div className="enter-img">
-                            <img src={require("../../assets/image/course/course-7.png")} alt='图片'/>
+                            <img src={require("../../assets/image/course/course-7.jpg")} alt='图片'/>
                         </div>
 
                     </div>

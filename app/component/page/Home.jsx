@@ -1,8 +1,7 @@
 import React from "react";
 import {App} from "../../common";
-import {Banners} from "../Comps";
+import {Banners, VideoPlayer} from "../Comps";
 import "../../assets/css/page/home.scss";
-import Utils from "../../common/Utils";
 import ApplyUtils from "../common/ApplyUtils";
 import U from "../../common/U";
 
@@ -50,7 +49,11 @@ const card = [
 ];
 
 
-const warp = {name: '嘎嘎', company: '经济的角度看', src: 'https://www.runoob.com/try/demo_source/movie.mp4'};
+const wrap = {
+    name: '嘎嘎',
+    company: '经济的角度看',
+    src: 'https://www.lgstatic.com/yun-web-fed/static/static-page/modules/common/images/yun.mp4'
+};
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -147,9 +150,27 @@ export default class Home extends React.Component {
                             </div>
                         </div>
                         <div className="bottom" onClick={() => {
-                            Utils.view(warp);
+
+                            document.getElementById('video-inner').style.display = 'none';
+                            let video = document.getElementById('video');
+                            video.setAttribute('class', 'video-block-play');
+                            video.play();
+
                         }}>
-                            <div className="icon-play"/>
+                            <div className='inner' id='video-inner'>
+                                <div className="icon-play"/>
+                            </div>
+                            <video src={wrap.src} id='video' controls className='video-block'
+                                   webkit-playsinline="true"  /*iOS 10中设置可以让视频在小窗内播放*/
+                                   playsinline="true"
+                                   x-webkit-airplay="allow"  /*启用AirPlay支持*/
+                                   x5-playsinline
+                                   x5-video-player-type="h5"  /*对于x5内核声明启用同层H5播放器*/
+                                   x5-video-player-fullscreen="true"   /*全屏设置设置为 true 是防止横屏*/
+                                   x5-video-orientation="portraint"  /*播放器的方向，默认为竖屏*/
+                                   x5-video-orientation="portraint" /*播放器支付的方向，landscape横屏，portraint竖屏，默认值为竖屏*/
+                            />
+
                         </div>
                     </div>
                 </div>
@@ -251,7 +272,7 @@ export default class Home extends React.Component {
                                             <div className="delegate">代表作</div>
                                             <div dangerouslySetInnerHTML={{__html: U.str.rn2br(masterPiece)}}
                                                  style={{textAlign: 'left'}}
-                                             className="delegate-detail"/>
+                                                 className="delegate-detail"/>
                                         </div>
                                     </div>
 

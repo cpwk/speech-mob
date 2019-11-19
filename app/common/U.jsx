@@ -196,9 +196,28 @@ var U = (function () {
         };
 
         return {
-            isEmpty, isNotEmpty, emptyToNull, nullToEmpty, rn2br,
-            startsWith, endsWith, replaceAll, trim, isNull, isNotNull, isIdentity,
-            num2str, isChinaMobile, trimChinaMobile, randomString, formatBankNo, bankNoTail, formatMoney, isCanvasBlank,hidMobile,hideEmail4
+            isEmpty,
+            isNotEmpty,
+            emptyToNull,
+            nullToEmpty,
+            rn2br,
+            startsWith,
+            endsWith,
+            replaceAll,
+            trim,
+            isNull,
+            isNotNull,
+            isIdentity,
+            num2str,
+            isChinaMobile,
+            trimChinaMobile,
+            randomString,
+            formatBankNo,
+            bankNoTail,
+            formatMoney,
+            isCanvasBlank,
+            hidMobile,
+            hideEmail4
         };
     })();
 
@@ -809,6 +828,7 @@ var U = (function () {
         str,
         date,
         array,
+        isAndroid,
         getParameter: getParameter,
         getHashParameter: getHashParameter,
         shortNumber: shortNumber,
