@@ -29,13 +29,13 @@ class BrandShow extends React.Component {
             let {content = []} = result;
             content.map((item, index) => {
                 let {type} = item;
-                if (type === 2) {
+                if (type === 4) {
                     if (stars.length < 4) {
                         stars.push(item);
                     } else {
                         return null;
                     }
-                } else if (type === 3) {
+                } else if (type === 5) {
                     if (billion.length < 3) {
                         billion.push(item);
                     } else {
@@ -86,14 +86,34 @@ class BrandShow extends React.Component {
                                             {videoSummary}
                                         </div>
                                     </div>
-                                    <div className="img" style={{
-                                        backgroundImage: `url(${img})`
-                                    }}>
-                                        <div className="mask"/>
-                                        <div className="icon-play" onClick={() => {
-                                            Utils.view({name: title, src: url});
-                                        }}/>
+                                    <div className="bottom">
+                                        <div className='inner' id={`video-inner_${index}`} style={{
+                                            backgroundImage: `url(${img})`,
+                                            backgroundPosition: '50% 50%',
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundSize: 'cover',
+                                        }}>
+                                            <div className="mask"/>
+                                            <div className="icon-play" onClick={() => {
+                                                document.getElementById(`video-inner_${index}`).style.display = 'none';
+                                                let video = document.getElementById(`video_${index}`);
+                                                video.setAttribute('class', 'video-block-play');
+                                                video.play();
+                                            }}/>
+                                        </div>
+                                        <video src={url} id={`video_${index}`} controls className='video-block'
+                                               webkit-playsinline="true"  /*iOS 10中设置可以让视频在小窗内播放*/
+                                               playsinline="true"
+                                               x-webkit-airplay="allow"  /*启用AirPlay支持*/
+                                               x5-playsinline
+                                               x5-video-player-type="h5"  /*对于x5内核声明启用同层H5播放器*/
+                                               x5-video-player-fullscreen="true"   /*全屏设置设置为 true 是防止横屏*/
+                                               x5-video-orientation="portraint"  /*播放器的方向，默认为竖屏*/
+                                               x5-video-orientation="portraint" /*播放器支付的方向，landscape横屏，portraint竖屏，默认值为竖屏*/
+                                        />
                                     </div>
+
+
                                     <div className="videoIntro">{videoIntro}</div>
                                 </div>
                             })}
@@ -107,19 +127,25 @@ class BrandShow extends React.Component {
                     </div>
                     <div className="stars">
                         {stars.map((item, index) => {
-                            let {img, title, url} = item;
-                            return <div className="item" key={index}>
-                                <div className="img" style={{
-                                    backgroundImage: `url(${img})`
-                                }}>
-                                    <div className="icon-play" onClick={() => {
-                                        Utils.view({name: title, src: url});
-                                    }}/>
-                                    <div className="mask"/>
-                                </div>
+                                let {img, title, url} = item;
+                                return <div className="item" key={index}>
+                                    <div className="img">
+                                        <div className='inner' id={`stars_video-inner_${index}`} style={{
+                                            backgroundImage: `url(${img})`,
+                                            backgroundPosition: '50% 50%',
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundSize: 'cover',
+                                        }}>
+                                            <div className="mask"/>
+                                            <div className="icon-play" onClick={() => {
+                                                Utils.view({src: url});
+                                            }}/>
+                                        </div>
+                                    </div>
 
-                            </div>
-                        })}
+                                </div>
+                            }
+                        )}
                     </div>
                 </div>
             </div>

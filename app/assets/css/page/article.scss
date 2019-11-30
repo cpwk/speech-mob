@@ -1,4 +1,5 @@
 @import "../mixin";
+@import "../color";
 
 .article-page {
   overflow: hidden;
@@ -21,7 +22,7 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 14px;
-        color: #648cdc;
+        color: $sp-blue;
       }
 
       .time {
@@ -60,7 +61,6 @@
 
       img {
         width: 92vw !important;
-        height: 200px;
       }
     }
 

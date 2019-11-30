@@ -178,6 +178,7 @@
     }
   }
 
+
   .footer {
     height: 255px;
     width: 100%;
@@ -303,7 +304,7 @@
     .btn {
       width: 88px;
       height: 24px;
-      background-color: #648cdc;
+      background-color: $sp-blue;
       color: #fff;
       font-size: 12px;
       line-height: 24px;
@@ -337,7 +338,7 @@
       .mark:before {
         content: "";
         transform: scaleY(0.5);
-        border-left: 4px solid #648cdc;
+        border-left: 4px solid $sp-blue;
         position: relative;
         left: -15px;
         top: 0;

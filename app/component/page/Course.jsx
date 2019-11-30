@@ -26,21 +26,21 @@ const tabs = [
     {title: <Badge text=''>企业家课程</Badge>, key: 1},
 ];
 const Yimgs = [
-    {img: require('../../assets/image/course/lessons01.png')},
-    {img: require('../../assets/image/course/lessons03.png')},
-    {img: require('../../assets/image/course/lessons05.png')},
-    {img: require('../../assets/image/course/lessons07.png')},
-    {img: require('../../assets/image/course/lessons09.png')},
-    {img: require('../../assets/image/course/lessons11.png')},
+    {img: require('../../assets/image/course/lessons01.jpg')},
+    {img: require('../../assets/image/course/lessons03.jpg')},
+    {img: require('../../assets/image/course/lessons05.jpg')},
+    {img: require('../../assets/image/course/lessons07.jpg')},
+    {img: require('../../assets/image/course/lessons09.jpg')},
+    {img: require('../../assets/image/course/lessons11.jpg')},
 
 ];
 const Qimgs = [
-    {img: require('../../assets/image/course/lessons12.png')},
-    {img: require('../../assets/image/course/lessons02.png')},
-    {img: require('../../assets/image/course/lessons04.png')},
-    {img: require('../../assets/image/course/lessons06.png')},
-    {img: require('../../assets/image/course/lessons08.png')},
-    {img: require('../../assets/image/course/lessons10.png'),}
+    {img: require('../../assets/image/course/lessons12.jpg')},
+    {img: require('../../assets/image/course/lessons02.jpg')},
+    {img: require('../../assets/image/course/lessons04.jpg')},
+    {img: require('../../assets/image/course/lessons06.jpg')},
+    {img: require('../../assets/image/course/lessons08.jpg')},
+    {img: require('../../assets/image/course/lessons10.jpg'),}
 ];
 
 const Program = '个人品牌方案班';
@@ -123,7 +123,7 @@ export default class Course extends React.Component {
                             正确的表达逻辑思维、良好的语言表达素养。
                         </div>
                         <div className="second-img">
-                            <img src={require("../../assets/image/course/frame.png")} alt="图片"/>
+                            <img src={require("../../assets/image/course/frame.jpg")} alt="图片"/>
                         </div>
                     </div>
                     <div className="gray"/>

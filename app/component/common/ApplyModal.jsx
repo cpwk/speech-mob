@@ -9,7 +9,7 @@ export default class ApplyModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cour: this.props.cour,
+            course: this.props.cour,
             visible: true
         };
     }
@@ -21,8 +21,8 @@ export default class ApplyModal extends React.Component {
     }
 
     handleOk = () => {
-        let {form = {}} = this.state;
-        let {name, mobile, course} = form;
+        let {form = {}, course} = this.state;
+        let {name, mobile} = form;
         if (name === undefined) {
             Toast.fail('请填写姓名');
         } else if (U.str.isChinaMobile(mobile) !== true) {
@@ -52,7 +52,7 @@ export default class ApplyModal extends React.Component {
     };
 
     render() {
-        let {form = {}, cour} = this.state;
+        let {form = {}, course} = this.state;
         let {name, mobile} = form;
         return <div>
             <Modal
@@ -67,7 +67,7 @@ export default class ApplyModal extends React.Component {
                 <div className="advisory">
                     <div className="form">
                         <div className="line">
-                            <p className='p required'>{cour}</p>
+                            <p className='p required'>{course}</p>
                         </div>
                         <div className="line">
 

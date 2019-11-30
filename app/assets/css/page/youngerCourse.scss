@@ -1,4 +1,5 @@
 @import "../mixin";
+@import "../color";
 
 .course-page {
   overflow: hidden;
@@ -45,7 +46,7 @@
 
             .am-tabs-default-bar-tab-active {
               height: 27px;
-              background: #648cdc;
+              background: $sp-blue;
               border-bottom: none;
             }
 
@@ -114,7 +115,7 @@
               height: 4.26vw;
               line-height: 4.26vw;
               font-weight: 200;
-              color: rgba(100, 140, 220, 1);
+              color: $sp-blue;
             }
           }
 

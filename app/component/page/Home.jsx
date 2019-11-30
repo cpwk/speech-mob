@@ -1,6 +1,6 @@
 import React from "react";
 import {App} from "../../common";
-import {Banners, VideoPlayer} from "../Comps";
+import {Banners} from "../Comps";
 import "../../assets/css/page/home.scss";
 import ApplyUtils from "../common/ApplyUtils";
 import U from "../../common/U";
@@ -17,7 +17,7 @@ const synopsis = [
 ];
 const card = [
     {
-        img: require('../../assets/image/home/program.png'),
+        img: require('../../assets/image/home/program.jpg'),
         h1: '个人品牌方案班',
         h2: '从小众走向大众',
         one: '全新思维方式',
@@ -27,7 +27,7 @@ const card = [
         text: '所有竞争都是资源的抢夺，如何在这个时代让自己持续升值，让人脉、资本主动找上自己，拥有一呼百应的能力。',
     },
     {
-        img: require('../../assets/image/home/shape.png'),
+        img: require('../../assets/image/home/shape.jpg'),
         h1: '个人品牌塑造营',
         h2: '明星影响力 为自己代言',
         one: '用演说重塑明星级影响力',
@@ -37,7 +37,7 @@ const card = [
         text: '同样的个体，为什么有人自带明星光环?同样的产品，为什么有些自带流量?用独特个人品牌成就闪光自我。'
     },
     {
-        img: require('../../assets/image/home/training.png'),
+        img: require('../../assets/image/home/training.jpg'),
         h1: '明星力集训营',
         h2: '优秀自驱 明星的素养',
         one: '建立榜样力量激发梦想',
@@ -113,10 +113,21 @@ export default class Home extends React.Component {
             });
             this.setState({latestNews, pastNews});
         });
+        App.api('/ws/home/findAllVideo', {
+            videoQo: JSON.stringify({
+                type: 1,
+                pageSize: 50,
+            })
+        }).then((result) => {
+            let {content = []} = result;
+            this.setState({video: content})
+        });
     };
 
     render() {
-        let {tutorList = [], teacherList = [], town = [], latestNews = [], pastNews = []} = this.state;
+        let {tutorList = [], teacherList = [], town = [], latestNews = [], pastNews = [], video = []} = this.state;
+        let videoStatus = video.find(item => item.status === 1);
+        let {img, url} = videoStatus||{};
         return <div className="home-box">
             <div className="banner">
                 <Banners/>
@@ -150,15 +161,16 @@ export default class Home extends React.Component {
                             </div>
                         </div>
                         <div className="bottom" onClick={() => {
-
                             document.getElementById('video-inner').style.display = 'none';
                             let video = document.getElementById('video');
                             video.setAttribute('class', 'video-block-play');
-                            video.play();
 
                         }}>
-                            <div className='inner' id='video-inner'>
+                            <div className='inner' id='video-inner' style={{
+                                backgroundImage: `url(${img})`,
+                            }}>
                                 <div className="icon-play"/>
+                                <div className="mask"/>
                             </div>
                             <video src={wrap.src} id='video' controls className='video-block'
                                    webkit-playsinline="true"  /*iOS 10中设置可以让视频在小窗内播放*/
@@ -170,7 +182,6 @@ export default class Home extends React.Component {
                                    x5-video-orientation="portraint"  /*播放器的方向，默认为竖屏*/
                                    x5-video-orientation="portraint" /*播放器支付的方向，landscape横屏，portraint竖屏，默认值为竖屏*/
                             />
-
                         </div>
                     </div>
                 </div>
@@ -290,9 +301,10 @@ export default class Home extends React.Component {
                                 </div>
                                 <div className="bottom">
                                     <div className="name">{name}</div>
-                                    <div className="summary" dangerouslySetInnerHTML={{__html: U.str.rn2br(intro)}}
+                                    <div className="summary"
+                                         dangerouslySetInnerHTML={{__html: U.str.rn2br(masterPiece)}}
                                          style={{textAlign: 'center'}}/>
-                                    <div className="detail" dangerouslySetInnerHTML={{__html: U.str.rn2br(masterPiece)}}
+                                    <div className="detail" dangerouslySetInnerHTML={{__html: U.str.rn2br(intro)}}
                                          style={{textAlign: 'center'}}/>
                                 </div>
                             </li>
@@ -347,7 +359,7 @@ export default class Home extends React.Component {
                     </ul>
                 </div>
 
-                <div className="latestNews piece">
+                <div className="latestNews piece News-lates">
                     <div className="title">
                         <h2 className="mark">回望往期课堂</h2>
                         <h2>领略学员风采</h2>

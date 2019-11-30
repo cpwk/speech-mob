@@ -14,6 +14,10 @@ export default class PlayerDialog extends React.Component {
         };
     }
 
+    componentDidMount() {
+        document.getElementById('video_modal').play();
+    }
+
     close = () => {
         this.setState({visible: false});
         Utils.common.closeModalContainer(id_div);
@@ -33,7 +37,12 @@ export default class PlayerDialog extends React.Component {
             maskClosable={true}
             onClose={() => this.close()}
             visible={visible}>
-            <video src={src} autoPlay='autoPlay' style={{marginTop: '25vh'}} width='300px' height='300px'/>
+            <video id='video_modal' src={src} autoPlay style={{marginTop: '25vh'}} width='300px' height='300px'
+                // x5-video-player-type="h5"
+                // 启用H5播放器,是微信安卓版的专有特性，恶心不？
+                // x5-video-player-fullscreen="true"
+                // 全屏设置，防止横屏
+            />
 
             {/*<AliPlayer src={src} index={index} width='300px' height='300px' style={{marginTop: '25vh'}}/>*/}
         </Modal>

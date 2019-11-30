@@ -1,9 +1,10 @@
 @import "../mixin";
+@import "../color";
 
 .piece {
   padding: 0 4vw;
   margin-bottom: 8px;
-  height: 491px;
+  height: 500px;
   background-color: #fff;
   overflow: hidden;
 
@@ -66,9 +67,15 @@
       .inner {
         width: 100%;
         height: 52vw;
-        background: url("../../image/common/mask.png") no-repeat center,
-        url("../../image/home/LuYu.png") no-repeat center;
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        .mask {
+          width: 100%;
+          height: 52vw;
+          background-color: rgba(0, 0, 0, 0.2);
+        }
       }
 
       .video-block {
@@ -121,54 +128,8 @@
     .top {
       height: 30vh;
       position: relative;
-      background: url("../../image/home/seven.png") no-repeat center;
+      background: url("../../image/home/seven.jpg") no-repeat center;
       background-size: contain;
-
-      //.color {
-      //  width: 72vw;
-      //  background: #f9f8fd;
-      //  color: #616161;
-      //  line-height: 20px;
-      //
-      //  .p {
-      //    padding-top: 6px;
-      //    height: 30vh;
-      //    width: 58vw;
-      //    overflow: hidden;
-      //    font-size: 12px;
-      //
-      //    p {
-      //      text-align: left;
-      //      padding-left: 8px;
-      //      width: 58vw;
-      //    }
-      //
-      //    p:last-child {
-      //      margin-top: 10px;
-      //    }
-      //  }
-      //}
-      //
-      //.people {
-      //  width: 42vw;
-      //  height: 33vh;
-      //  max-height: 200px;
-      //  background: url("../../image/home/people.png") no-repeat center;
-      //  background-size: contain;
-      //  position: absolute;
-      //  bottom: 0;
-      //  right: 0;
-      //
-      //  span {
-      //    position: absolute;
-      //    writing-mode: vertical-rl;
-      //    right: -8px;
-      //    bottom: -20px;
-      //    color: #648cdc;
-      //    font-size: 14px;
-      //    transform: scale(0.75);
-      //  }
-      //}
     }
   }
 }
@@ -257,7 +218,7 @@
             }
 
             h2 {
-              color: #648cdc;
+              color: $sp-blue;
               font-size: 12px;
               line-height: 12px;
             }
@@ -389,7 +350,7 @@
             flex: 0 0 50px;
             @include multi-line(1);
             font-size: 16px;
-            color: #648cdc;
+            color: $sp-blue;
             font-weight: 500;
           }
 
@@ -397,7 +358,7 @@
             flex: 1;
             font-size: 12px;
             transform: scale(0.83);
-            color: #648cdc;
+            color: $sp-blue;
 
             .delegate {
               margin-bottom: 8px;
@@ -484,7 +445,7 @@
   height: 515px;
 
   .map {
-    background: url("../../image/home/map.png") center no-repeat;
+    background: url("../../image/home/map.jpg") center no-repeat;
     background-size: contain;
     width: 91vw;
     height: 169px;
@@ -546,7 +507,7 @@
 
   #scroll::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #648cdc;
+    background-color: $sp-blue;
   }
 
   #scroll::-webkit-scrollbar-track {
@@ -596,4 +557,9 @@
       margin: 0;
     }
   }
+}
+
+
+.News-lates {
+  margin-bottom: 0;
 }

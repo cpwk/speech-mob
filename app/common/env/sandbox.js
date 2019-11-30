@@ -1,4 +1,4 @@
 let env = {
-    api: '//106.14.142.72:7089/'
+    api: 'http://106.15.190.251:9079/'
 };
 export default env;

@@ -2,7 +2,6 @@ import React from 'react';
 
 import '../assets/css/common.scss'
 import '../assets/css/page/home-wrap.scss'
-import {Utils} from "../common";
 import {Footer, Header} from "./Comps";
 
 export default class HomeWrap extends React.Component {
@@ -14,12 +13,15 @@ export default class HomeWrap extends React.Component {
 
     componentDidMount() {
         window.addEventListener('hashchange', () => {
-            window.scrollTo(0);
+            window.scrollTo(0, 0);
             this.judgePage();
         });
         this.judgePage();
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.doScroll);
+    }
 
     judgePage = () => {
 
@@ -45,7 +47,6 @@ export default class HomeWrap extends React.Component {
             menu.className = "top-header";
         }
     };
-
 
 
     render() {

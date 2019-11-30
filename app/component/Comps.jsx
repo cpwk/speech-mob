@@ -128,14 +128,15 @@ class Header extends React.Component {
             document.body.style.overflow = 'auto';
             menu.className = 'top-header';
             if (topScroll > 100) {
-                menu.className = "top-header top-header-fixed";
+                menu.className = "top-header top-header-fixed ";
             }
         } else {
             document.body.style.overflow = 'hidden';
+            menu.className = 'top-header top-header-open';
             if (topScroll > 100) {
-                menu.className = "top-header top-header-fixed";
+                menu.className = "top-header top-header-fixed top-header-open";
             } else {
-                menu.className = "top-header  top-header-fixed";
+                menu.className = "top-header top-header-open";
             }
         }
 
@@ -149,7 +150,7 @@ class Header extends React.Component {
             {see && <div className='overlay' onClick={() => {
                 this.show()
             }}/>}
-            <div className={`top-header  ${see && 'top-header-open'}`}>
+            <div className='top-header'>
                 <div className="inner">
                     <div className="logo"/>
                     <span className="phone">
@@ -162,8 +163,7 @@ class Header extends React.Component {
                 </div>
 
 
-                {see &&
-                <div className="see">
+                {see && <div className="see">
                     <div className="link" onClick={() => {
                         App.go(`/`);
                         this.show();
