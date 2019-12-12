@@ -38,7 +38,7 @@ const card = [
     },
     {
         img: require('../../assets/image/home/training.jpg'),
-        h1: '明星力集训营',
+        h1: '少年演说家蓝图计划',
         h2: '优秀自驱 明星的素养',
         one: '建立榜样力量激发梦想',
         two: '树立不甘平庸的信仰',
@@ -49,11 +49,6 @@ const card = [
 ];
 
 
-const wrap = {
-    name: '嘎嘎',
-    company: '经济的角度看',
-    src: 'https://www.lgstatic.com/yun-web-fed/static/static-page/modules/common/images/yun.mp4'
-};
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -63,6 +58,7 @@ export default class Home extends React.Component {
             town: [],
             latestNews: [],
             pastNews: [],
+            video: [],
         }
     }
 
@@ -74,11 +70,11 @@ export default class Home extends React.Component {
         App.go(`/article/${id}`);
     };
     loadData = () => {
-        let {type, tutorList = [], teacherList = [], latestNews = [], pastNews = []} = this.state;
+        let {type, tutorList = [], teacherList = [], latestNews = [], pastNews = [],video=[]} = this.state;
         App.api('/ws/home/trainers', {
             trainerQo: JSON.stringify({
                 type,
-                pageSize: 30
+                pageSize: 50
             })
         }).then((result) => {
             let {content} = result;
@@ -95,13 +91,13 @@ export default class Home extends React.Component {
         });
         App.api('ws/home/findAllCampus', {
             campusQo: JSON.stringify({
-                pageSize: 30
+                pageSize: 50
             })
         }).then((list) => {
             let {content = []} = list;
             this.setState({town: content})
         });
-        App.api('/ws/home/articles', {articleQo: JSON.stringify({type, pageSize: 30})}).then((news) => {
+        App.api('/ws/home/articles', {articleQo: JSON.stringify({type, pageSize: 50})}).then((news) => {
             let {content = []} = news;
             content.map((item, index) => {
                 let {type} = item;
@@ -113,14 +109,19 @@ export default class Home extends React.Component {
             });
             this.setState({latestNews, pastNews});
         });
-        App.api('/ws/home/findAllVideo', {
-            videoQo: JSON.stringify({
-                type: 1,
-                pageSize: 50,
-            })
-        }).then((result) => {
+        App.api('/ws/home/findAllVideo', {videoQo: JSON.stringify({type, pageSize: 50})}).then((result) => {
             let {content = []} = result;
-            this.setState({video: content})
+            content.map((item, index) => {
+                let {type} = item;
+                if (type === 1) {
+                    if (video.length > 1) {
+                        return null;
+                    } else {
+                        video.push(item);
+                    }
+                }
+            });
+            this.setState({video});
         });
     };
 
@@ -172,7 +173,7 @@ export default class Home extends React.Component {
                                 <div className="icon-play"/>
                                 <div className="mask"/>
                             </div>
-                            <video src={wrap.src} id='video' controls className='video-block'
+                            <video src={url} id='video' controls className='video-block'
                                    webkit-playsinline="true"  /*iOS 10中设置可以让视频在小窗内播放*/
                                    playsinline="true"
                                    x-webkit-airplay="allow"  /*启用AirPlay支持*/
